@@ -7,7 +7,9 @@ pipeline {
 	}
     stages {
         stage('Build') {
-			powershell 'echo Hello'
+			steps {
+				powershell 'echo Hello'
+			}
         }
     }
 }
