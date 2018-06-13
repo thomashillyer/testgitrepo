@@ -5,14 +5,24 @@ pipeline {
       parallel {
         stage('Build') {
           steps {
-            powershell 'echo Hello'
+            echo 'Building...'
           }
         }
         stage('Approval') {
           steps {
-            input(message: 'are you sure', ok: 'yes', submitter: 'thomas', submitterParameter: 'admin')
+            input(message: 'Approve?', ok: 'Approve', submitter: 'thomashillyer', submitterParameter: 'admin')
           }
         }
+        stage('Email') {
+          steps {
+            echo 'Email Sent'
+          }
+        }
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'Deploying...'
       }
     }
   }
