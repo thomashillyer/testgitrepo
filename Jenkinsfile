@@ -12,6 +12,7 @@ pipeline {
       //}
       steps {
        powershell 'echo start'
+        powershell 'docker version'
        powershell 'cd c:\\jenkins\\'
        powershell 'mkdir randomtest'
       }
