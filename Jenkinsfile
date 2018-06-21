@@ -12,7 +12,7 @@ pipeline {
       }
       steps {
        powershell 'echo start'
-       powershell 'cd c:\jenkins\'
+       powershell 'cd c:\\jenkins\\'
        powershell 'mkdir randomtest'
       }
     }
