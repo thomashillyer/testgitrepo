@@ -1,30 +1,22 @@
 pipeline {
-  agent any
+  agent {
+    label 'windows_agent_host'
+  }
   stages {
     stage('Build') {
-      parallel {
-        stage('Build') {
-          steps {
-            echo 'Building...'
-          }
-        }
-        stage('Approval') {
-          steps {
-            input(message: 'Approve?', ok: 'Approve', submitter: 'thomashillyer', submitterParameter: 'admin')
-          }
-        }
-        stage('Email') {
-          steps {
-            echo 'Email Sent'
-          }
+      agent {
+        docker { 
+          image 'thomashillyer/suite_build:latest'
+          args '-v C:\Users\thomashillyer\Documents\JENKINSARCHTEST:/jenkins/'
         }
       }
-    }
-    stage('Deploy') {
       steps {
-        echo 'Deploying...'
+       powershell 'echo start'
+       powershell 'cd c:\jenkins\'
+       powershell 'mkdir randomtest'
       }
     }
+    
   }
   environment {
     CI = 'true'
