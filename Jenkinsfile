@@ -7,7 +7,7 @@ pipeline {
       agent {
         docker { 
           image 'thomashillyer/suite_build:latest'
-          args '-v C:\Users\thomashillyer\Documents\JENKINSARCHTEST:/jenkins/'
+          args '-v C:\\Users\\thomashillyer\\Documents\\JENKINSARCHTEST:/jenkins/'
         }
       }
       steps {
