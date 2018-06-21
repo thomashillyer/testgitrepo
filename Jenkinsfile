@@ -14,7 +14,7 @@ pipeline {
        powershell 'echo start'
         powershell 'docker version'
        powershell 'cd c:\\jenkins\\'
-       powershell 'mkdir randomtest'
+       powershell 'mkdir randomtest -force'
       }
     }
     
