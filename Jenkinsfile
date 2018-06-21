@@ -4,12 +4,12 @@ pipeline {
   }
   stages {
     stage('Build') {
-      agent {
-        docker { 
-          image 'thomashillyer/suite_build:latest'
-          args '-v C:\\Users\\thomashillyer\\Documents\\JENKINSARCHTEST:/jenkins/'
-        }
-      }
+      //agent {
+      //  docker { 
+      //    image 'thomashillyer/suite_build:latest'
+      //    args '-v C:\\Users\\thomashillyer\\Documents\\JENKINSARCHTEST:/jenkins/'
+      //  }
+      //}
       steps {
        powershell 'echo start'
        powershell 'cd c:\\jenkins\\'
