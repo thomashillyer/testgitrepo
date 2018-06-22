@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'windows_agent_host'
+    label 'windows_server'
   }
   stages {
     stage('Build') {
