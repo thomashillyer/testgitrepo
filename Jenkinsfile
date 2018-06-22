@@ -12,7 +12,7 @@ pipeline {
       //}
       steps {
        powershell 'echo start'
-       powershell 'docker run -v C:\\Users\\thomashillyer\\Documents\\JENKINSARCHTEST:/jenkins/ --name build --rm thomashillyer/suite_build:latest'
+       powershell 'docker run -v C:/Users/thomashillyer/Documents/JENKINSARCHTEST:/jenkins --name build --rm thomashillyer/suite_build:latest'
        powershell 'docker exec -it build powershell'
        powershell 'cd c:\\jenkins\\'
        powershell 'mkdir randomtest -force'
