@@ -12,6 +12,8 @@ pipeline {
       //}
       steps {
        powershell 'echo start'
+        powershell 'docker version'
+        powershell 'docker run hello-world'
        powershell 'docker run -v c:\\Users\\thomashillyer\\Documents\\JENKINSARCHTEST:c:\\jenkins --name build --rm thomashillyer/suite_build:latest'
        powershell 'docker exec -it build powershell'
        powershell 'cd c:\\jenkins\\'
