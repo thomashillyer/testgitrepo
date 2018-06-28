@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'windows_server'
+    label 'build'
   }
   stages {
     stage('Build') {
